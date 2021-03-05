@@ -1,0 +1,324 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+// 全部的字體
+.fontFamilyContent {
+    font-family: GJGP;
+}
+
+// 隱私權政策
+.privacyPolicies {
+    padding: 15px;
+    >div {
+        text-align: center;
+        font-size: 15px;
+    }
+    a {
+        text-decoration: underline;
+    }
+}
+
+// Logo和headerNav
+.headerApp {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1005;
+    padding: 8px;
+    border-bottom: 1px solid #f5f5f5;
+    background-color: #fff;
+    .headerLogo {
+        height: 40px;
+        img {
+            height: 100%;
+        }
+    }
+    .headerNav {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        li {
+            padding: 0 15px;
+            a {
+                text-decoration: none;
+            }
+        }
+        li:last-of-type {
+            padding-right: 0;
+        }
+        i {
+            margin-left: 5px;
+        }
+    }
+}
+
+// 搜尋區塊
+.homeBanner {
+    .btn,
+    input {
+        // focus不要有陰影
+        box-shadow: none !important;
+    }
+    padding: 80px 0;
+    background-position: 50%;
+    background-size: cover;
+    color: #fff;
+    position: relative;
+    .overlap {
+        background: rgba(51, 51, 51, 0.2);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .kkSearch {
+        .title {
+            margin: 0 0 5px;
+            text-shadow: 0 5px 15px rgba(51, 51, 51, 0.1);
+            line-height: 1.5;
+        }
+        .subTitle {
+            margin: 0 0 15px;
+            font-weight: 400;
+            opacity: 0.9;
+            text-shadow: 0 5px 15px rgba(51, 51, 51, 0.1);
+            letter-spacing: 1.5px;
+        }
+        .searchBlock {
+            position: relative;
+            box-shadow: 0 10px 20px rgba(51, 51, 51, 0.1);
+            // 搜尋input
+            .input-group {
+                input {
+                    height: 48px;
+                }
+                .btn {
+                    padding: 6px 24px;
+                }
+            }
+            // 搜尋dropdown
+            .search_dropdown {
+                background: #fff;
+                border-radius: 6px;
+                box-shadow: 0 2px 20px rgba(0, 0, 0, 0.15);
+                padding: 15px 0;
+                position: absolute;
+                width: 100%;
+                z-index: 999;
+                top: 55px;
+                left: 0;
+                .title {
+                    color: #000;
+                    margin: 0 0 15px 20px;
+                    font-weight: 700;
+                    font-size: 15px;
+                }
+                ul {
+                    width: 100%;
+                    margin: 0;
+                    padding: 0 10px;
+                    column-count: 3;
+                    column-rule: 1px solid #eee;
+                    list-style: none;
+                    a {
+                        color: #333;
+                        display: flex;
+                        padding: 5px 10px;
+                        border-radius: 4px;
+                        font-size: 14px;
+                        text-decoration: none;
+                        i {
+                            color: #ef7a70;
+                            font-weight: 700;
+                            margin: auto 0 auto 10px;
+                            font-size: 10px;
+                        }
+                        i::before {
+                            content: '\f3b1　HOT';
+                        }
+                    }
+                    li:hover {
+                        background: #f4f4f4;
+                    }
+                }
+            }
+        }
+    }
+    .quickSearch {
+        padding: 10px 0;
+        font-size: 13px;
+        .quickSearch_title {
+            display: inline-block;
+            margin-top: 5px;
+            vertical-align: top;
+        }
+        .gap {
+            display: inline-block;
+            opacity: 0.5;
+            vertical-align: top;
+            margin: 5px;
+        }
+        // 搜尋關鍵字
+        .search_keyword {
+            display: inline-block;
+            width: 70%;
+            margin-bottom: 10px;
+            .btn {
+                border-radius: 20px;
+                font-weight: 600;
+                font-size: 13px;
+                padding: 2px 12px;
+                margin: 4px 3px;
+                text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+            }
+            .btn:hover {
+                background-color: hsla(0, 0%, 100%, 0.15);
+                color: #fff;
+            }
+        }
+    }
+}
+
+// 主題列表
+.theme {
+    width: 100%;
+    margin: 50px auto;
+    .themeLists {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        .themeBlock {
+            display: inline-block;
+            width: 16%;
+            .themeType {
+                position: relative;
+                display: inline-block;
+                .themeIcon {
+                    width: 60px;
+                    height: 60px;
+                    margin: 0;
+                    display: inline-block;
+                    text-align: center;
+                    background-size: 100%;
+                    background-repeat: no-repeat;
+                }
+                .hot::before,
+                .new::before {
+                    width: 43px;
+                    height: 20px;
+                    position: absolute;
+                    top: -10px;
+                    right: -12px;
+                    border-radius: 100px;
+                    color: #fff;
+                    font-size: 12px;
+                    font-style: initial;
+                    line-height: 1px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    z-index: 9;
+                }
+                .hot::before {
+                    content: 'HOT';
+                    background-color: #ffb400;
+                }
+                .new::before {
+                    content: 'NEW';
+                    background-color: #ef7a70;
+                }
+            }
+        }
+        .themeTitle {
+            margin: 10px 0;
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #666;
+            font-weight: 500;
+        }
+    }
+}
+
+// 最新優惠
+.latest {
+    padding: 30px 0;
+    .latestHead {
+        margin-bottom: 20px;
+        .title {
+            font-size: 25px;
+            font-weight: 600;
+            margin: 0;
+            color: #333;
+        }
+    }
+    .latestCarousel {
+        width: 100%;
+        position: relative;
+        .latestContent {
+            overflow: hidden;
+            padding: 28px 14px;
+            margin: -28px -14px;
+            .contentItem {
+                transition: all 0.2s ease 0s;
+                display: flex;
+                position: relative;
+                .item {
+                    width: calc( 98% / 3);
+                    padding-right: 1%;
+                    .itemContent {
+                        height: 165px;
+                        .image {
+                            height: 100%;
+                            border-radius: 10px;
+                            background-position: 50%;
+                            background-repeat: no-repeat;
+                            background-size: cover;
+                        }
+                    }
+                }
+                .active {
+                    .itemContent {
+                        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                    }
+                }
+            }
+        }
+        .latestBtn {
+            .btnPN {
+                position: absolute;
+                width: 45px;
+                height: 45px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: #666;
+                text-align: center;
+                border-radius: 100%;
+                background-color: #fff;
+                margin: 0;
+                box-shadow: 0 3px 15px rgba(0, 0, 0, 0.15);
+            }
+            .prev {
+                left: -60px;
+            }
+            .next {
+                right: -60px;
+            }
+            .disabled {
+                display: none;
+            }
+        }
+    }
+}
+
+// copyright
+.copyright {
+    text-align: center;
+}
